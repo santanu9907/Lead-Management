@@ -33,7 +33,7 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/sales-activity" element={<SalesActivity />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<h2>Page Not Found</h2>} />
+            <Route path="*" element={<h2>Page Not Found!</h2>} />
           </Routes>
         </div>
       </div>
