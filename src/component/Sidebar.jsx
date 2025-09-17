@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { FiMenu, FiX, FiHome, FiSettings, FiLogOut } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiSettings } from "react-icons/fi";
 import { FaRegCalendar } from "react-icons/fa";
 import { MdNotificationsNone } from "react-icons/md";
+import { MdPersonOutline } from "react-icons/md";
+import { TbActivityHeartbeat } from "react-icons/tb";
 import { BsBox } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-
 export default function Sidebar({ open, setOpen }) {
   const links = [
     { path: "/", name: "Dashboard", icon: <FiHome size={20} /> },
@@ -13,7 +13,7 @@ export default function Sidebar({ open, setOpen }) {
       name: "Follow Ups",
       icon: <FaRegCalendar size={20} />,
     },
-    { path: "/leads", name: "Leads", icon: <FiLogOut size={20} /> },
+    { path: "/leads", name: "Leads", icon: <MdPersonOutline size={20} /> },
     {
       path: "/notification",
       name: "Notification",
@@ -23,7 +23,7 @@ export default function Sidebar({ open, setOpen }) {
     {
       path: "/sales-activity",
       name: "Sales Activity",
-      icon: <FiLogOut size={20} />,
+      icon: <TbActivityHeartbeat size={20} />,
     },
     { path: "/settings", name: "Settings", icon: <FiSettings size={20} /> },
   ];
@@ -34,7 +34,6 @@ export default function Sidebar({ open, setOpen }) {
         ${open ? "w-64" : "w-16"} 
         transition-all duration-300 ease-in-out z-50`}
     >
-      {/* Header */}
       <div className="flex justify-between items-center p-4 border-b border-gray-700">
         {open && <h1 className="text-xl font-bold">LeadCRM</h1>}
         <button onClick={() => setOpen(!open)}>
@@ -42,7 +41,6 @@ export default function Sidebar({ open, setOpen }) {
         </button>
       </div>
 
-      {/* Nav links */}
       <nav className="flex flex-col p-2 space-y-2">
         {links.map((link) => (
           <NavLink

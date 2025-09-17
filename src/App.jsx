@@ -9,6 +9,7 @@ import Products from "./pages/Products";
 import SalesActivity from "./pages/SalesActivity";
 import Settings from "./pages/Settings";
 import { useState } from "react";
+import Filter from "./component/Filter";
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -16,10 +17,8 @@ export default function App() {
   return (
     <Router>
       <div className="flex">
-        {/* Sidebar */}
         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
 
-        {/* Main content */}
         <div
           className={`flex-1 p-6 bg-gray-100 min-h-screen 
           transition-all duration-300 ease-in-out
@@ -33,6 +32,7 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/sales-activity" element={<SalesActivity />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/filter" element={<Filter />} />
             <Route path="*" element={<h2>Page Not Found!</h2>} />
           </Routes>
         </div>
